@@ -1,0 +1,11 @@
+#summary httrack-py usage instructions
+
+To use the library, write a Python module which defines a class with one or more methods with the following names: 'start', 'end', 'pause', 'query2, 'query3', 'change_options', 'check_html', 'preprocess_html', 'postprocess_html', 'loop', 'check_link', 'save_file', 'link_detected', 'link_detected2' (3.33-beta4 and up), 'save_name', 'send_header', and 'receive_header'.
+
+More detailed instructions are available in:
+
+ * HttrackPluginUsage
+
+ * PythonExtensionUsage
+
+There's also some information specifically about ExceptionHandling
