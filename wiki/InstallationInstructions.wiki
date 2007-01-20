@@ -1,0 +1,29 @@
+#summary One-sentence summary of this page.
+
+The library consists of some C code and a Python wrapper to it. On unix, the package can be built & installed like any other python packaget; ie. 
+
+{{{
+python setup.py build
+}}}
+
+and
+
+{{{
+python setup.py install
+}}}
+
+
+To compile the code manually, run the compiler as:
+
+{{{
+gcc -g -I <path-to-Python-header-files> \
+           -I <path-to-httrack-source-dir> \
+           -I <httrack-source-dir>/src \
+           -l python<version-number> -O -g3 -Wall -D_REENTRANT -DINET6 \
+           -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DPLUGIN \
+           -shared -pthread -o httrack-py.so httrack-py.c
+}}}
+
+This results in a HTTrack plug-in being built. Copy the resulting httrack-py.so to /usr/local/lib or to some other place in the library search path. To compile as Python extension instead, leave off the "-DPLUGIN" parameter to gcc, and copy the resulting httracklib.so to Python site-packages directory.
+
+
