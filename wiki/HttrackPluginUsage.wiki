@@ -20,8 +20,5 @@ NOTE: The automatic registration of other callbacks by the start callback works 
 
  * httrack-py as httrack's default plugin: the --wrapper option can be omitted, if the filename of the module is libhttrack-plugin.so instead of httrack-py.so, and if it is located somewhere in the library search path. If libhttrack-plugin.so is stored in another directory, set the enviroment variable LD_LIBRARY_PATH to this directory. Thanks to Xavier Roche for the hint that the module can be automatically loaded this way.
 
-
-
-
-
+Also see ExceptionHandling.
 
