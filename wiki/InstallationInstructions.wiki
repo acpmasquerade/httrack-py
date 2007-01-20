@@ -28,3 +28,5 @@ gcc -g -I <path-to-Python-header-files> \
 }}}
 
 This results in a HTTrack plug-in being built. Copy the resulting httrack-py.so to /usr/local/lib or to some other place in the library search path. To compile as Python extension instead, leave off the "-DPLUGIN" parameter to gcc, and copy the resulting httracklib.so to Python site-packages directory.
+
+For introduction to the usage of the library, see [Introduction]
