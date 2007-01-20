@@ -1,0 +1,16 @@
+0.6, 2004-10-22: - link-detected2 callback added 
+		 - return value of the C-extension function httrack 
+		   changed.
+		 - configurable exception handling added
+0.5, 2004-09-21: - httrack-py.c can now also be compiled as a C extension
+                   for Python
+0.4, 2004-09-03: - void plugin_init() added to allow fully automatic
+		   module initialization
+		 - fixed some possible segfaults
+0.3, 2004-08-31: - callbacks preprocess-html, postprocess-html (new in
+		   httrack 3.33-beta2) included
+0.2, 2004-08-28: - fixed bugs in object reference management
+		 - cleaned up a few functions
+		 - implemented most missing callbacks
+		 - adapted to httrack version 3.33.02. (httrack 3.33-beta2)
+0.1, 2004-08-23: - first test
