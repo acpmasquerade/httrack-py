@@ -1,4 +1,5 @@
-#summary One-sentence summary of this page.
+#summary How to install httrack-py as a plugin or Python extension
+#labels Featured
 
 Note: The library is strongly recommended to be used with HTTrack version 3.33-beta3 or newer, up to 3.4.0-2. However, HTTrack 3.4.1 and up require httrack-py 0.7 or newer, as httrack-py versions before 0.7 use the older pre-3.4.1 HTTrack API/ABI.
 
@@ -27,4 +28,3 @@ gcc -g -I <path-to-Python-header-files> \
 }}}
 
 This results in a HTTrack plug-in being built. Copy the resulting httrack-py.so to /usr/local/lib or to some other place in the library search path. To compile as Python extension instead, leave off the "-DPLUGIN" parameter to gcc, and copy the resulting httracklib.so to Python site-packages directory.
-
