@@ -20,3 +20,4 @@ class CbClass:
 
 This example should work exactly like the "regular" httrack command line program.
 
+Also see ExceptionHandling.
