@@ -3,7 +3,9 @@
 
 Note: The library is strongly recommended to be used with HTTrack version 3.33-beta3 or newer, up to 3.4.0-2. However, HTTrack 3.4.1 and up require httrack-py 0.7 or newer, as httrack-py versions before 0.7 use the older pre-3.4.1 HTTrack API/ABI.
 
-The library consists of some C code and a Python wrapper to it. On unix, the package can be built & installed like any other python packaget; ie. 
+To build the library, you need the httrack sources. Also, you need to run the configure script to generate config.h - if you don't, the compile will not succeed.
+
+The library consists of some C code and a Python wrapper to it. On unix, the package can be built & installed like any other python package (see setup.py for config options prior to this):
 
 {{{
 python setup.py build
