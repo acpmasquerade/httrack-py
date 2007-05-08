@@ -16,7 +16,7 @@ Operating System :: POSIX
 HTTRACK_SRC_DIR = "/home/petri/downloads/httrack-source"
 
 import sys, os
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 
 if os.name == "posix":
    PLATFORM_INCLUDES = ['/usr/include','/usr/include/python%i.%i' % sys.version_info[:2]]
@@ -37,8 +37,7 @@ setup(name="httrack-py",
       url="http://code.google.com/p/httrack-py",
       license = "http://www.fsf.org/licensing/licenses/lgpl.txt",
       platforms = ["unix","win32"],
-      packages = ["httrack"],
-      package_dir = {"httrack": "lib"},
+      py_modules = ['httrack'],
       description = doclines[0],
       classifiers = filter(None, classifiers.split("\n")),
       long_description = "\n".join(doclines[2:]),
