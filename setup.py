@@ -31,9 +31,10 @@ if sys.version_info < (2, 3):
 doclines = __doc__.split("\n")
 
 setup(name="httrack-py",
-      version="0.6",
+      version="0.6.1",
       maintainer="Abel Deuring",
       maintainer_email="adeuring@gmx.net",
+      url="http://code.google.com/p/httrack-py",
       license = "http://www.fsf.org/licensing/licenses/lgpl.txt",
       platforms = ["unix","win32"],
       packages = ["httrack"],
