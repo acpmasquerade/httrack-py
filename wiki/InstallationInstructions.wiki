@@ -30,6 +30,6 @@ gcc -g -I <path-to-Python-header-files> -I <path-to-httrack-source-dir> \
 
 This results in a HTTrack plug-in being built. Copy the resulting httrack-py.so to /usr/local/lib or to some other place in the library search path. To compile as Python extension instead, leave off the "-DPLUGIN" parameter to gcc, and copy the resulting httracklib.so to Python site-packages directory.
 
-Note that at least on Debian Linux, it may happen that libhttrack is in file libhttrack.so.1. Adding link "libhttrack.so" in the same directory, pointing to libhttrack.so.1 enables the library to be found by "setup.py build".
+Note that at least on Debian Linux, it may happen that libhttrack is not found because of missing libhttrack.so link that has to point to libhttrack.so.1 (both in /usr/lib). Adding the link manually solves the issue.
 
 For introduction to the usage of the library, see [Introduction]
