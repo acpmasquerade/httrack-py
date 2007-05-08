@@ -2093,8 +2093,6 @@ EXTERNAL_FUNCTION int hts_py_receive_header(char *buf,
     v = PyInt_FromLong(IGNORE_EXCEPTION);
     PyDict_SetItemString(d, "IGNORE_EXCEPTION", v);
     Py_DECREF(v);
-    PyErr_SetString(httrackError, "TEST!!!!!!!!");
-    fprintf(stderr, "raising Python error\n");
     
     if (PyErr_Occurred())
       Py_FatalError("can't initialize module httracklib");
