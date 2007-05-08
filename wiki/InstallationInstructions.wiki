@@ -1,11 +1,15 @@
-#summary How to install httrack-py as a plugin or Python extension
+#summary How to build & install httrack-py as a plugin or Python extension
 #labels Featured
 
-Note: The library is strongly recommended to be used with HTTrack version 3.33-beta3 or newer, up to 3.4.0-2. However, HTTrack 3.4.1 and up require httrack-py 0.7 or newer, as httrack-py versions before 0.7 use the older pre-3.4.1 HTTrack API/ABI.
+The extension consists of some C code and a Python wrapper to it.
 
-To build the library, you need the httrack sources. Also, you need to run the configure script to generate config.h - if you don't, the compile will not succeed.
+To build the extension, you need the httrack sources. Versions from 3.33-beta3 up to 3.4.0-2 should work (tested with 3.40.4-3.1). However the extension probably cannot be compiled with newer versions due to the changed API/ABI in those versions.
 
-The library consists of some C code and a Python wrapper to it. On unix, the package can be built & installed like any other python package (see setup.py for config options prior to this):
+Note that you also need to run the configure script in the httrack source package to generate config.h - if you don't, the compile will not succeed.
+
+Finally, for running the extension, the shared httrack library (libhttrack) must be installed & available also at runtime. On Debian, it is available as libhttrack1, or you can build it from the same httrack sources needed to compile the extension. Make sure the version of the source & the library are the same if you're not building the library yourself.
+
+On unix, the package can be built & installed like any other python package. You have to first set HTTRACK_SRC_DIR in setup.py to point to the location of the httrack sources, then run:
 
 {{{
 python setup.py build
