@@ -7,8 +7,6 @@ To build the extension, you need the httrack sources. Versions from 3.33-beta3 u
 
 Note that you also need to run the configure script in the httrack source package to generate config.h - if you don't, the compile will not succeed.
 
-Finally, for running the extension, the shared httrack library (libhttrack) must be installed & available also at runtime. On Debian, it is available as libhttrack1, or you can build it from the same httrack sources needed to compile the extension. Make sure the version of the source & the library are the same if you're not building the library yourself.
-
 On unix, the package can be built & installed like any other python package. You have to first set HTTRACK_SRC_DIR in setup.py to point to the location of the httrack sources, then run:
 
 {{{
@@ -22,7 +20,9 @@ python setup.py install
 }}}
 
 
-To compile the code manually, run the compiler as:
+These two steps result in the extension being compiled and installed.
+
+To compile & install the code manually instead, first run the compiler as:
 
 {{{
 gcc -g -I <path-to-Python-header-files> -I <path-to-httrack-source-dir> \
@@ -32,8 +32,8 @@ gcc -g -I <path-to-Python-header-files> -I <path-to-httrack-source-dir> \
        -shared -pthread -o httrack-py.so httrack-py.c
 }}}
 
-This results in a HTTrack plug-in being built. Copy the resulting httrack-py.so to /usr/local/lib or to some other place in the library search path. To compile as Python extension instead, leave off the "-DPLUGIN" parameter to gcc, and copy the resulting httracklib.so to Python site-packages directory.
+This results in a HTTrack plug-in being built. Then copy the resulting httrack-py.so to /usr/local/lib or to some other place in the library search path. To compile as Python extension instead, leave off the "-DPLUGIN" parameter to gcc, and copy the resulting httracklib.so to Python site-packages directory.
 
-Note that at least on Debian Linux, it may happen that libhttrack is not found because of missing libhttrack.so link that has to point to libhttrack.so.1 (both in /usr/lib). Adding the link manually solves the issue.
+Notes: for running the extension, the shared httrack library (libhttrack) must be installed & available also at runtime. On Debian Linux, it is available as libhttrack1, or you can build it from the same httrack sources needed to compile the extension. Make sure the version of the source & the library are the same if you're not building the library yourself. At least on Debian, it may happen that libhttrack is not found because of missing libhttrack.so link that has to point to libhttrack.so.1 (both in /usr/lib). Adding the link manually solves the issue.
 
 For introduction to the usage of the library, see [Introduction]
