@@ -13,7 +13,7 @@ Operating System :: Unix
 Operating System :: POSIX
 """
 
-HTTRACK_SRC_DIR = "../httrack"
+HTTRACK_SRC_DIR = "/home/petri/downloads/httrack-source"
 
 import sys, os
 from distutils.core import setup, Extension
@@ -44,7 +44,8 @@ setup(name="httrack-py",
       ext_modules=[Extension(
          "httracklib",
          [os.path.join("src","httrack-py.c")],
-         include_dirs=[HTTRACK_SRC_DIR, os.sep.join((HTTRACK_SRC_DIR, "src"))] + PLATFORM_INCLUDES
+         include_dirs=[HTTRACK_SRC_DIR, os.sep.join((HTTRACK_SRC_DIR, "src"))] + PLATFORM_INCLUDES,
+         libraries=['httrack']
       )],
 
 )
