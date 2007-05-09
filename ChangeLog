@@ -1,3 +1,6 @@
+0.6.1, 2007-5-8: - extension import was failing because of libhttrack was
+                   not included during compile; fixed
+                 - removed forced exception making extension fail when run
 0.6, 2004-10-22: - link-detected2 callback added 
 		 - return value of the C-extension function httrack 
 		   changed.
